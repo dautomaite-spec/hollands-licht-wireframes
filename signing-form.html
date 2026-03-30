@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wireframe – Signing Form (Figurant)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            hl: { DEFAULT: '#8B0000', light: '#a80000', dark: '#6b0000' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background: #f5f5f5; }
+    .phone-frame {
+      width: 390px;
+      min-height: 844px;
+      background: white;
+      border-radius: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      overflow: hidden;
+      position: relative;
+    }
+    .step { display: none; }
+    .step.active { display: block; }
+    canvas { touch-action: none; cursor: crosshair; }
+  </style>
+</head>
+<body class="flex flex-col items-center py-10 gap-10">
+
+  <h1 class="text-2xl font-bold text-gray-700">Wireframe – Signing Flow (Figurant)</h1>
+  <p class="text-gray-500 text-sm -mt-6">Mobiel formaat · 390×844 · Klik "Volgende" om stappen te doorlopen</p>
+
+  <div class="flex gap-8 flex-wrap justify-center">
+
+    <!-- STAP 1: Welkomstscherm -->
+    <div class="flex flex-col items-center gap-3">
+      <span class="text-sm font-semibold text-gray-500">Stap 0 – Welkomst</span>
+      <div class="phone-frame flex flex-col">
+        <div class="bg-hl px-6 py-5">
+          <img src="" alt="" class="hidden" />
+          <div class="text-white text-xs font-semibold uppercase tracking-widest mb-1">Hollands Licht</div>
+          <div class="text-white text-2xl font-bold leading-tight">Flikken Rotterdam S9</div>
+          <div class="text-red-200 text-sm mt-1">Draaidag · 2 april 2026</div>
+        </div>
+        <div class="flex-1 px-6 py-8 flex flex-col gap-6">
+          <div>
+            <h2 class="text-xl font-bold text-gray-800 mb-2">Welkom</h2>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Je staat op het punt een <strong>quitclaim</strong> te ondertekenen voor je deelname als figurant.
+              Dit geeft Hollands Licht het recht om jouw beeldmateriaal te gebruiken.
+            </p>
+          </div>
+          <div class="bg-red-50 border border-red-200 rounded-xl p-4">
+            <p class="text-sm text-red-800">
+              📋 Lees het document zorgvuldig door voordat je ondertekent.
+            </p>
+          </div>
+          <div class="mt-auto">
+            <button class="w-full bg-hl text-white font-bold py-4 rounded-xl text-base">
+              Starten →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAP 1: Persoonsgegevens -->
+    <div class="flex flex-col items-center gap-3">
+      <span class="text-sm font-semibold text-gray-500">Stap 1 – Persoonsgegevens</span>
+      <div class="phone-frame flex flex-col">
+        <div class="bg-hl px-6 py-4 flex items-center justify-between">
+          <div class="text-white font-bold text-sm">Flikken Rotterdam S9</div>
+          <div class="text-red-200 text-xs">Stap 1 van 4</div>
+        </div>
+        <!-- Progress bar -->
+        <div class="h-1 bg-red-100"><div class="h-full bg-hl" style="width:25%"></div></div>
+        <div class="flex-1 px-6 py-6 flex flex-col gap-4 overflow-auto">
+          <h2 class="text-lg font-bold text-gray-800">Jouw gegevens</h2>
+          <div class="flex gap-3">
+            <div class="flex-1 flex flex-col gap-1">
+              <label class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Voornaam *</label>
+              <div class="border border-gray-200 rounded-lg px-3 py-3 text-sm text-gray-400 bg-gray-50">Jan</div>
+            </div>
+            <div class="flex-1 flex flex-col gap-1">
+              <label class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Achternaam *</label>
+              <div class="border border-gray-200 rounded-lg px-3 py-3 text-sm text-gray-400 bg-gray-50">de Vries</div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Geboortedatum *</label>
+            <div class="border border-gray-200 rounded-lg px-3 py-3 text-sm text-gray-400 bg-gray-50">15-06-1990</div>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Straat + huisnummer *</label>
+            <div class="border border-gray-200 rounded-lg px-3 py-3 text-sm text-gray-400 bg-gray-50">Voorbeeldstraat 12</div>
+          </div>
+          <div class="flex gap-3">
+            <div class="w-28 flex flex-col gap-1">
+              <label class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Postcode *</label>
+              <div class="border border-gray-200 rounded-lg px-3 py-3 text-sm text-gray-400 bg-gray-50">1234 AB</div>
+            </div>
+            <div class="flex-1 flex flex-col gap-1">
+              <label class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Woonplaats *</label>
+              <div class="border border-gray-200 rounded-lg px-3 py-3 text-sm text-gray-400 bg-gray-50">Rotterdam</div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Telefoonnummer *</label>
+            <div class="border border-gray-200 rounded-lg px-3 py-3 text-sm text-gray-400 bg-gray-50">06-12345678</div>
+          </div>
+          <div class="mt-2">
+            <button class="w-full bg-hl text-white font-bold py-4 rounded-xl text-base">
+              Volgende →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAP 2: Document lezen -->
+    <div class="flex flex-col items-center gap-3">
+      <span class="text-sm font-semibold text-gray-500">Stap 2 – Document lezen</span>
+      <div class="phone-frame flex flex-col">
+        <div class="bg-hl px-6 py-4 flex items-center justify-between">
+          <div class="text-white font-bold text-sm">Flikken Rotterdam S9</div>
+          <div class="text-red-200 text-xs">Stap 2 van 4</div>
+        </div>
+        <div class="h-1 bg-red-100"><div class="h-full bg-hl" style="width:50%"></div></div>
+        <div class="flex-1 px-6 py-6 flex flex-col gap-4">
+          <h2 class="text-lg font-bold text-gray-800">Lees de quitclaim</h2>
+          <p class="text-xs text-gray-500">Scroll naar beneden om het document volledig te lezen.</p>
+          <div class="flex-1 border border-gray-200 rounded-xl p-4 overflow-auto text-xs text-gray-600 leading-relaxed bg-gray-50 h-96" style="max-height:440px;">
+            <p class="font-bold mb-2">QUITCLAIM – FIGURANTEN</p>
+            <p class="mb-2">Ondergetekende, hierna te noemen "de Figurant", verklaart hierbij uitdrukkelijk toestemming te verlenen aan Hollands Licht B.V., gevestigd te Amsterdam, om opnamen waarop de Figurant verschijnt te gebruiken voor de productie van de televisieserie <em>Flikken Rotterdam</em>.</p>
+            <p class="mb-2">Deze toestemming omvat het recht tot gebruik van beeld- en geluidsmateriaal voor uitzending, promotie, archivering en alle andere vormen van exploitatie, wereldwijd, voor onbepaalde tijd.</p>
+            <p class="mb-2">De Figurant doet hierbij afstand van eventuele aanspraken op vergoeding of royalty's voor voornoemd gebruik, tenzij schriftelijk anders overeengekomen.</p>
+            <p class="mb-2">De Figurant bevestigt dat hij/zij meerderjarig is en bevoegd is deze overeenkomst aan te gaan.</p>
+            <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+            <p class="mb-2">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+            <div class="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+              <p class="text-green-700 font-semibold text-xs">✓ Je hebt het volledige document gelezen</p>
+            </div>
+          </div>
+          <button class="w-full bg-hl text-white font-bold py-4 rounded-xl text-base">
+            Akkoord, handtekening zetten →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAP 3: Handtekening -->
+    <div class="flex flex-col items-center gap-3">
+      <span class="text-sm font-semibold text-gray-500">Stap 3 – Handtekening</span>
+      <div class="phone-frame flex flex-col">
+        <div class="bg-hl px-6 py-4 flex items-center justify-between">
+          <div class="text-white font-bold text-sm">Flikken Rotterdam S9</div>
+          <div class="text-red-200 text-xs">Stap 3 van 4</div>
+        </div>
+        <div class="h-1 bg-red-100"><div class="h-full bg-hl" style="width:75%"></div></div>
+        <div class="flex-1 px-6 py-6 flex flex-col gap-4">
+          <h2 class="text-lg font-bold text-gray-800">Zet je handtekening</h2>
+          <p class="text-sm text-gray-500">Teken hieronder met je vinger of muis.</p>
+          <div class="border-2 border-dashed border-gray-300 rounded-xl bg-gray-50 flex flex-col items-center justify-center" style="height:200px;">
+            <canvas width="320" height="180" style="border-radius:8px;"></canvas>
+            <p class="text-gray-400 text-xs mt-2">← Teken hier →</p>
+          </div>
+          <button class="text-sm text-gray-400 underline text-center">Opnieuw beginnen</button>
+          <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 text-xs text-gray-500">
+            <p>Datum: <strong class="text-gray-700">30 maart 2026</strong></p>
+            <p>Naam: <strong class="text-gray-700">Jan de Vries</strong></p>
+          </div>
+          <button class="w-full bg-hl text-white font-bold py-4 rounded-xl text-base">
+            Volgende →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAP 4: Email + verzenden -->
+    <div class="flex flex-col items-center gap-3">
+      <span class="text-sm font-semibold text-gray-500">Stap 4 – E-mail & verzenden</span>
+      <div class="phone-frame flex flex-col">
+        <div class="bg-hl px-6 py-4 flex items-center justify-between">
+          <div class="text-white font-bold text-sm">Flikken Rotterdam S9</div>
+          <div class="text-red-200 text-xs">Stap 4 van 4</div>
+        </div>
+        <div class="h-1 bg-red-100"><div class="h-full bg-hl" style="width:100%"></div></div>
+        <div class="flex-1 px-6 py-6 flex flex-col gap-5">
+          <h2 class="text-lg font-bold text-gray-800">Bijna klaar</h2>
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-semibold text-gray-500 uppercase tracking-wide">E-mailadres (optioneel)</label>
+            <div class="border border-gray-200 rounded-lg px-3 py-3 text-sm text-gray-400 bg-gray-50">jan@voorbeeld.nl</div>
+            <p class="text-xs text-gray-400 mt-1">Je ontvangt een kopie van de getekende quitclaim.</p>
+          </div>
+          <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 flex flex-col gap-2 text-sm">
+            <p class="font-semibold text-gray-700 text-xs uppercase tracking-wide">Samenvatting</p>
+            <div class="flex justify-between text-gray-600 text-xs"><span>Naam</span><span class="font-medium text-gray-800">Jan de Vries</span></div>
+            <div class="flex justify-between text-gray-600 text-xs"><span>Draaidag</span><span class="font-medium text-gray-800">2 april 2026</span></div>
+            <div class="flex justify-between text-gray-600 text-xs"><span>Productie</span><span class="font-medium text-gray-800">Flikken Rotterdam S9</span></div>
+            <div class="flex justify-between text-gray-600 text-xs"><span>Type</span><span class="font-medium text-gray-800">Onbetaald</span></div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-5 h-5 border-2 border-hl rounded mt-0.5 flex-shrink-0 bg-hl flex items-center justify-center">
+              <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <p class="text-xs text-gray-600 leading-relaxed">Ik ga akkoord met de quitclaim en geef toestemming voor gebruik van mijn beeldmateriaal. <a class="text-hl underline" href="#">Privacybeleid</a></p>
+          </div>
+          <div class="mt-auto">
+            <button class="w-full bg-hl text-white font-bold py-4 rounded-xl text-base">
+              Ondertekenen & verzenden ✓
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bevestiging -->
+    <div class="flex flex-col items-center gap-3">
+      <span class="text-sm font-semibold text-gray-500">Bevestigingsscherm</span>
+      <div class="phone-frame flex flex-col">
+        <div class="bg-hl px-6 py-4">
+          <div class="text-white font-bold text-sm">Flikken Rotterdam S9</div>
+        </div>
+        <div class="flex-1 px-6 py-12 flex flex-col items-center justify-center gap-6 text-center">
+          <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center">
+            <svg class="w-12 h-12 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Bedankt, Jan!</h2>
+            <p class="text-gray-500 text-sm leading-relaxed">Je quitclaim is succesvol ondertekend.<br/>Je ontvangt een bevestiging op <strong>jan@voorbeeld.nl</strong></p>
+          </div>
+          <div class="w-full bg-gray-50 border border-gray-200 rounded-xl p-4 text-xs text-gray-500">
+            <p>Ondertekend op <strong>30 maart 2026 om 14:32</strong></p>
+            <p class="mt-1">Referentie: <strong>FR9-20260330-0042</strong></p>
+          </div>
+          <p class="text-xs text-gray-400">Je kunt dit venster nu sluiten.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="mt-4 text-xs text-gray-400 text-center">
+    Hollands Licht – Digitaal Quitclaim Systeem · Wireframe v1 · 30-03-2026
+  </div>
+
+</body>
+</html>
